@@ -1,0 +1,721 @@
+body {
+    margin: 0;
+    background-color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #2F4F4F;
+}
+
+*,
+*:before,
+*::after  {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+hr {
+    border: 0;
+    background-color: lightblue;
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 40px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: url(../images/photo.jpg) center no-repeat;
+    -webkit-backgroup-size: cover;
+    background-size: cover;
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 880px;
+    margin: 200px auto 0;
+    text-align: center;
+}
+
+.intro__title {
+    color: darkslategrey;
+    font-size: 150px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.intro__title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 0 auto 20px;
+    background-color: darkslategrey;
+}
+
+.intro__suptitle {
+    margin-bottom: 20px;
+    font-size: 72px;
+    color: darkslategrey;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.header {
+    width: 100%;
+    padding-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: darkslategrey;
+}
+
+.nav {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    position: relative;
+    color: darkslategrey;
+    text-decoration: none;
+    transition: color .2s linear;
+}
+
+.nav__link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity .1s linear;
+}
+
+.nav__link:hover {
+    color: black;
+}
+
+.nav__link:hover:after, .nav__link.active:after {
+    opacity: 1;
+}
+
+.nav__link.active {
+    color: black;
+}
+
+.btn:hover {
+    background-color: darkslategrey;
+    color: aliceblue;
+}
+
+.slider {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.slider__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider__item {
+    width: 23%;
+    padding: 20px 0;
+    position: relative;
+    border-top: 3px solid darkslategrey;
+    opacity: .7;
+    font-size: 18px;
+    color: darkslategrey;
+    text-transform: uppercase;
+}
+
+.slider__item.active {
+    opacity: 1;
+}
+
+.slider__item.active:before {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: 1;
+}
+
+.slider__num {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section--gray {
+    background-color: powderblue;
+}
+
+.section__header {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 0;
+    text-align: center;
+}
+
+.section__suptitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    color: darkslategrey;
+}
+
+.section__title {
+    font-size: 30px;
+    font-weight: 700;
+    color: darkslategrey;
+    text-transform: uppercase;
+}
+
+.section__title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 30px auto 30px;
+    background-color: darkslategrey;
+}
+
+.section__text {
+    color: darkslategrey;
+    font-size: 15px;
+}
+
+.about {
+    margin: 80px -15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about__item {
+    width: 29%;
+    position: relative;
+    padding: 0 15px
+}
+
+.about__item:hover .about__img {
+    transform: translate3d(-10px, -10px, 0);
+}
+
+.about__item:hover .about__img img {
+    opacity: .1;
+}
+
+.about__item:hover .about__text{
+    opacity: 1;
+}
+
+.about__img {
+    background: linear-gradient(to bottom, lightblue, aliceblue);
+    transition: transform .2s linear;
+}
+
+.about__img img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: opacity .1s linear;
+}
+
+.about__text {
+    width: 100%;
+    color: darkslategrey;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    transform: translate3d(0, -50%, 0);
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+
+.statistics {
+    background-color: lightblue;
+}
+
+.stat {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stat__item {
+    flex: 1 1 0;
+    border-left: 1px solid aliceblue;
+    text-align: center;
+    color: darkslategrey;
+    padding: 40px 25px;
+}
+
+.stat__item:last-child {
+    border-right: 1px solid aliceblue;
+}
+
+.stat__count {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat__text {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills__item {
+    width: 33.333333%;
+    position: relative;
+    margin-bottom: 40px;
+    padding: 0 35px 40px 85px;
+}
+
+.skills__item--border {
+    border-bottom: 1px solid lightblue;
+}
+
+.skills__icon {
+    position: absolute;
+    top: 0;
+    left: 28px;
+    z-index: 1;
+}
+
+.skills__title {
+    font-size: 14px;
+    color: darkslategrey;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.skills__text {
+    font-size: 15px;
+    color: darkslategrey;
+}
+
+.education {
+    display: flex;
+    margin: 0 -15px;
+    flex-wrap: wrap;
+}
+
+.education__item {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.education__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.accordion__item {
+    border: 1px solid darkslategrey;
+    margin-bottom: 10px;
+}
+
+.accordion__item.active .accordion__content {
+    display: block;
+}
+
+.accordion__item.active .accordion__header {
+    border-bottom-color: darkslategrey;
+}
+
+.accordion__item.active .accordion__header:after {
+    transform: translateY(-50%) rotate(-45deg);
+    margin-top: 5px;
+}
+
+.accordion__header {
+    border-bottom: 1px solid transparent;
+    padding: 15px 20px 15px 65px;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion__header:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid darkslategrey;
+    border-right: 2px solid darkslategrey;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 1;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+.accordion__icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.accordion__content {
+    padding: 15px 20px;
+    font-size: 15px;
+    color: darkslategrey;
+    font-style: italic;
+    font-weight: 300;
+    display: none;
+}
+
+.accordion__title {
+    font-size: 14px;
+    color: darkslategrey;
+    text-transform: uppercase;
+}
+
+.flex {
+    display: flex;
+}
+
+.slick-slider{
+    min-width: 0;
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-track{
+    display: flex;
+}
+
+.reviews {
+    padding: 0 110px;
+    position: relative;
+    min-width: 0;
+}
+
+.reviews .slick-arrow{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.reviews .slick-arrow.slick-prev{
+    left: 0;
+    background: url('../images/arrow1.svg') 0 0 / 100% no-repeat;
+    border: none;
+    padding-bottom: 30px;
+}
+
+.reviews .slick-arrow.slick-next{
+    right: 0;
+    background: url('../images/arrow2.svg') 0 0 / 100% no-repeat;
+    border: none;
+    padding-bottom: 30px;
+}
+
+.reviews__item {
+    padding-left: 205px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.reviews__photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border: 2px solid darkslategrey;
+    display: block;
+}
+
+.reviews__text {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 300;
+    color: darkslategrey;
+    margin-bottom: 15px;
+}
+
+.reviews__author {
+    font-size: 24px;
+    color: black;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.reviews__author:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 3px;
+    background-color: darkslategrey;
+    margin-right: 10px;
+}
+
+.end {
+    padding-bottom: 0px;
+}
+
+.footer {
+    padding-top: 25px;
+    background-color: lightblue;
+    font-size: 24px;
+    font-weight: 300;
+    color: darkslategrey;
+    padding-bottom: 20px;
+}
+
+.footer a {
+    color: white;
+    font-size: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+@media (max-width: 1230px) {
+
+    .intro__suptitle {
+        font-size: 52px;
+    }
+
+    .intro__title { 
+        font-size: 120px;
+    }
+
+    .reviews__text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 990px) {
+
+    .intro__suptitle {
+        font-size: 32px;
+    }
+
+    .intro__title { 
+        font-size: 80px;
+    }
+
+    .stat {
+        justify-content: center;
+    }
+
+    .stat__item {
+        flex: none;
+        width: 33.333333%;
+        border: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .stat__item:last-child {
+        border-right: 0;
+    }
+
+    .skills__item {
+        width: 50%;
+        padding-bottom: 0;
+    }
+
+    .skills__item--border {
+        border-bottom: 0;
+    }
+
+    .reviews {
+        padding: 0 60px;
+    }
+
+    .reviews__item {
+        padding-left: 175px;
+    }
+}
+
+@media (max-width: 770px) {
+
+    .nav {
+        display: none;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .slider__text {
+        display: none;
+    }
+
+    .slider__item.active:before {
+        width: 50%;
+    }
+
+    .about {
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .about__item {
+        width: 100%;
+        max-width: 360px;
+        margin-bottom: 30px;
+    }
+
+    .about__item:last-child {
+        margin-bottom: 0;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+
+    .skills__item {
+        width: 100%;
+        max-width: 400px;
+        padding-left: 55px;
+        padding-right: 0;
+    }
+
+    .skills__icon {
+        left: 0;
+    }
+
+    .education__img {
+        display: none;
+    }
+
+    .education__item {
+        width: 100%;
+    }
+
+    .contacts {
+        font-size: 20px;
+    }
+
+    .reviews__photo {
+        position: static;
+        margin: 0 auto 20px;
+    }
+
+    .reviews__item {
+        padding-left: 0;
+    }
+
+    .reviews__text {
+        font-size: 16px;
+    }
+
+    .reviews__author {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .intro__suptitle {
+        font-size: 22px;
+    }
+
+    .intro__title { 
+        font-size: 40px;
+    }
+
+    .section__title {
+        font-size: 24px;
+    }
+
+    .section__suptitle {
+        font-size: 20px;
+    }
+
+    .section__title:after {
+        margin: 20px auto;
+    }
+
+    .section__header {
+        margin-bottom: 50px;
+    }
+
+    .stat__item {
+        width: 100%;
+        border-bottom: 1px solid aliceblue;
+    }
+
+    .stat__item:last-child {
+        border-bottom: 0;
+    }
+
+    .stat__count {
+        font-size: 52px;
+    }
+
+    .reviews {
+        padding: 0;
+    }
+
+    .reviews__btn {
+        top: 18%;
+    }
+}
